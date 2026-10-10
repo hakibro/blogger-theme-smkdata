@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[landing] SPMB – Daftar Lebih Awal</title>
+<style>
+/* ==== Ringkasan CSS tema asli (penyederhanaan) ==== */
+body{margin:0;font-family:system-ui,Arial,sans-serif;color:#333;line-height:1.6}
+#outer-wrapper{max-width:100%;margin:0 auto;overflow:hidden}
+.header{max-width:1150px;margin:51px auto 0;padding:40px 0;text-align:center}
+.topbar{background:#646464;color:#fff;padding:14px;height:50px;position:fixed;width:100%;z-index:9999}
+.topbar .rapper{max-width:1150px;margin:0 auto;display:flex;justify-content:space-between}
+.main-content-wrapper{max-width:1150px;margin:30px auto 0}
+#content-wrapper{max-width:1150px;margin:40px auto 0}
+div#mywrapper{float:left;width:69%}
+#sidebar-wrapper{float:right;width:26%;margin:15px 0 60px 0}
+.post{background:#fff;padding:0 0 40px 0}
+.labelhome{color:#a5a5a5;font-size:14px}
+.labelhome a{color:#059669;text-transform:uppercase;font-size:12px}
+.entry-title{font-size:34px;margin:8px 0}
+.post-info{color:#888;font-size:14px}
+#footer-top,#footer1{background:#222;color:#ddd;padding:40px;text-align:center}
+.clear{clear:both}
+.demo-toggle{position:fixed;top:10px;left:10px;z-index:99999;background:#059669;color:#fff;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+/* ====== CSS MODE LANDING (salin dari <style id='landing-mode-css'> tema) ====== */
+html.landing-pending #menunav,html.landing-pending .topbar,html.landing-pending #outer-wrapper > .header,
+html.landing-pending .headertypes,html.landing-pending #sidebar-wrapper,html.landing-pending #footer-top,
+html.landing-pending #footer1,html.landing-pending .footer,html.landing-pending #footer-credits{visibility:hidden}
+
+body.is-landing #menunav,body.is-landing .topbar,body.is-landing .headertypes,
+body.is-landing #outer-wrapper > .header,body.is-landing .header .titlewrapper,
+body.is-landing .header .descriptionwrapper,body.is-landing #sidebar-wrapper,
+body.is-landing #footer-top,body.is-landing #footer1,body.is-landing .footer,
+body.is-landing #footer-credits,body.is-landing .footerbottom,body.is-landing #Slider,
+body.is-landing .odd-box,body.is-landing .featured-box-area,body.is-landing #Featured-Boxes{display:none!important}
+
+body.is-landing .post-header,body.is-landing .post-header-line-1,body.is-landing .entry-title,
+body.is-landing .post-title,body.is-landing .post-info,body.is-landing .post-info-top,body.is-landing .post-meta,
+body.is-landing .post-byline,body.is-landing .byline,body.is-landing .labelhome,body.is-landing .labelhome1,
+body.is-landing .post-labels,body.is-landing .breadcrumb,body.is-landing .breadcrumbs,body.is-landing .breadcrumb-trail,
+body.is-landing #breadcrumb,body.is-landing .post-heading,body.is-landing .post-date,body.is-landing .date-header,
+body.is-landing .post-author,body.is-landing .post-timestamp,body.is-landing .social-buttons,body.is-landing .odd-pager,
+body.is-landing .mbt-pager,body.is-landing #related-posts,body.is-landing .related-posts,body.is-landing .comments,
+body.is-landing #comments,body.is-landing .comment-form,body.is-landing .comments-block,body.is-landing .cmt_count_iframe_holder,
+body.is-landing .status-msg-wrap,body.is-landing .post-feeds,body.is-landing .post-footer{display:none!important}
+
+body.is-landing{background:#fff!important;padding-top:0!important;margin-top:0!important}
+body.is-landing #outer-wrapper{max-width:100%!important;width:100%!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
+body.is-landing .main-content-wrapper,body.is-landing #content-wrapper{max-width:100%!important;width:100%!important;margin:0!important;padding:0!important}
+body.is-landing div#mywrapper{float:none!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important}
+body.is-landing #post-wrapper,body.is-landing .post-container,body.is-landing div#main,body.is-landing #main .indexposts,body.is-landing .indexposts{width:100%!important;max-width:100%!important;float:none!important;margin:0!important;padding:0!important;background:transparent!important}
+body.is-landing #main .post,body.is-landing .indexposts .post,body.is-landing .post-outer,body.is-landing .date-outer,body.is-landing .date-posts,body.is-landing .post.hentry{width:100%!important;max-width:100%!important;float:none!important;margin:0!important;padding:0!important;background:transparent!important}
+body.is-landing #main .post-body,body.is-landing #main .post-entry,body.is-landing .post-body,body.is-landing .post-entry,body.is-landing .entry-content{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important}
+body.is-landing .topbar,body.is-landing .rest{margin:0!important;padding:0!important}
+body.is-landing .landing-bleed{width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important}
+body.is-landing img{max-width:100%;height:auto}
+</style>
+</head>
+<body class="onsidebar">
+<button class="demo-toggle" onclick="document.body.classList.toggle('is-landing')">Toggle is-landing</button>
+
+<div id="outer-wrapper">
+  <nav id="menunav">
+    <div class="header"><h1 class="title">NAMA BLOG ANDA</h1><p class="description">Deskripsi situs</p></div>
+  </nav>
+  <div class="topbar"><div class="rapper"><span>HOME&nbsp;&nbsp;DOWNLOAD&nbsp;&nbsp;FEATURES</span><span>Cari…</span></div></div>
+
+  <div class="main-content-wrapper">
+    <div id="content-wrapper">
+      <div id="mywrapper">
+        <div id="post-wrapper"><div class="post-container"><div id="main">
+          <div class="indexposts clear"><div class="post">
+            <!-- Bagian yang HARUS hilang di mode landing: label/breadcrumb + judul + byline -->
+            <div class="post-header">
+              <div class="labelhome">Home / <a href="#">landing</a> / [landing] SPMB – Daftar Lebih Awal</div>
+              <h1 class="entry-title">[landing] SPMB – Daftar Lebih Awal</h1>
+              <div class="post-info">By SMK Darut Taqwa Purwosari · October 09, 2026</div>
+            </div>
+            <div class="post-entry">
+              <section class="landing-bleed" style="padding:100px 24px;text-align:center;background:linear-gradient(135deg,#064e3b,#065f46);color:#fff">
+                <h1 style="margin:0 0 12px;font-size:40px">Amankan Kuota &amp; Jurusan Impianmu</h1>
+                <p style="margin:0 0 24px;color:#a7f3d0">Jalur Indent / Daftar Lebih Awal — T.A. 2026/2027</p>
+                <a href="#" style="display:inline-block;padding:16px 28px;background:#f59e0b;color:#064e3b;border-radius:14px;font-weight:800;text-decoration:none">Daftar Indent Sekarang</a>
+              </section>
+              <div style="max-width:1100px;margin:0 auto;padding:56px 24px">
+                <h2 style="color:#064e3b">Pilihan Jurusan</h2>
+                <p style="color:#475569">Konten halaman dirender penuh, tanpa navbar/sidebar/footer/title/byline.</p>
+              </div>
+            </div>
+          </div></div>
+        </div></div>
+      </div>
+      <div id="sidebar-wrapper"><div class="sidebar-container"><h2>Sidebar</h2><p>Widget: Popular Posts, Label, dll.</p></div></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div id="footer-top"><div>Newsletter / Instagram</div></div>
+  <div class="footer" id="footer1"><div>© Footer situs</div></div>
+</div>
+
+<script>
+/* Simulasi skrip deteksi label/judul/URL di widget Blog */
+(function(){
+  var pageLabels = ["landing","SPMB"];   // ubah untuk uji label
+  var isLanding = false;
+  for (var i=0;i<pageLabels.length;i++){
+    var lbl=String(pageLabels[i]).toLowerCase().replace(/^\s+|\s+$/g,'');
+    if (lbl==='landing'||lbl==='fullpage'||lbl==='full-page'||lbl==='full page'||lbl==='landing-page'||lbl==='landing page'){isLanding=true;break;}
+  }
+  if(!isLanding){var t=(document.title||'').replace(/^\s+|\s+$/g,'').toLowerCase(); if(t.indexOf('[landing]')===0||t.indexOf('[fullpage]')===0){isLanding=true;}}
+  if(isLanding) document.body.className=(document.body.className+' is-landing').replace(/\s+/g,' ').trim();
+  document.documentElement.classList.remove('landing-pending');
+})();
+</script>
+</body>
+</html>

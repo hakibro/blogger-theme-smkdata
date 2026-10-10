@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SPMB SMK Darut Taqwa 2026/2027 — Jalur Indent / Daftar Lebih Awal</title>
+<meta name="description" content="Amankan kuota & jurusan impianmu lebih awal di SMK Darut Taqwa. Sekolah Pusat Keunggulan berbasis pesantren dengan kelas industri dan ratusan mitra kerja." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            50:  '#ecfdf5',
+            100: '#d1fae5',
+            200: '#a7f3d0',
+            300: '#6ee7b7',
+            400: '#34d399',
+            500: '#10b981',
+            600: '#059669',
+            700: '#047857',
+            800: '#065f46',
+            900: '#064e3b',
+            950: '#022c22',
+          },
+          gold: {
+            400: '#fbbf24',
+            500: '#f59e0b',
+          }
+        },
+        boxShadow: {
+          'soft': '0 10px 40px -12px rgba(6, 78, 59, 0.25)',
+          'glow': '0 0 0 1px rgba(16,185,129,.25), 0 20px 45px -15px rgba(16,185,129,.55)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { -webkit-tap-highlight-color: transparent; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: .08s; }
+  .reveal-delay-2 { transition-delay: .16s; }
+  .reveal-delay-3 { transition-delay: .24s; }
+  .reveal-delay-4 { transition-delay: .32s; }
+
+  /* Marquee mitra industri */
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+  }
+  .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+  /* Floating blob */
+  @keyframes floaty {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-14px); }
+  }
+  .animate-floaty { animation: floaty 6s ease-in-out infinite; }
+
+  /* Grid pattern background */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* Hide scrollbar for horizontal scroll */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+
+<body class="bg-white text-slate-700 antialiased selection:bg-brand-600 selection:text-white">
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div id="navbarInner" class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-brand-950/70 px-4 py-3 backdrop-blur-md transition-all duration-300">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2.5">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 text-lg font-extrabold text-white shadow-glow">DT</span>
+        <span class="leading-tight">
+          <span class="block text-sm font-extrabold tracking-tight text-white">SMK DARUT TAQWA</span>
+          <span class="block text-[11px] font-medium text-brand-300">SPMB 2026/2027 · Jalur Indent</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-1 lg:flex">
+        <a href="#keuntungan" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Keuntungan</a>
+        <a href="#keunggulan" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Keunggulan</a>
+        <a href="#jurusan" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Jurusan</a>
+        <a href="#mitra" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Mitra</a>
+        <a href="#prestasi" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Prestasi</a>
+        <a href="#syarat" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-100 transition hover:bg-white/10 hover:text-white">Syarat</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#kontak" class="hidden rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 px-4 py-2.5 text-sm font-bold text-brand-950 shadow-lg shadow-amber-500/20 transition hover:brightness-110 sm:inline-flex">
+          📝 Daftar Indent
+        </a>
+        <!-- Mobile toggle -->
+        <button id="menuBtn" aria-label="Buka menu" class="grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-white lg:hidden">
+          <svg id="iconOpen" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="iconClose" class="hidden h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden overflow-hidden rounded-2xl border border-white/10 bg-brand-950/95 backdrop-blur-md lg:hidden">
+      <nav class="flex flex-col p-3">
+        <a href="#keuntungan" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Keuntungan Indent</a>
+        <a href="#keunggulan" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Keunggulan Sekolah</a>
+        <a href="#jurusan" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Pilihan Jurusan</a>
+        <a href="#mitra" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Mitra Industri</a>
+        <a href="#prestasi" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Prestasi & Ekstrakurikuler</a>
+        <a href="#syarat" class="mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-brand-100 hover:bg-white/10">Syarat Pendaftaran</a>
+        <a href="#kontak" class="mobile-link mt-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 px-4 py-3 text-center text-sm font-bold text-brand-950">📝 Daftar Indent Sekarang</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     1. HERO SECTION
+============================================================ -->
+<section id="hero" class="relative overflow-hidden bg-brand-950 pt-32 pb-20 sm:pt-40 sm:pb-28">
+  <!-- Background layers -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800"></div>
+  <div class="absolute inset-0 bg-grid opacity-60"></div>
+  <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-brand-500/25 blur-3xl animate-floaty"></div>
+  <div class="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-gold-400/15 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-14 lg:grid-cols-12">
+
+      <!-- Copy -->
+      <div class="lg:col-span-7">
+        <!-- Badge -->
+        <div class="reveal inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-2 text-xs font-semibold text-brand-200 backdrop-blur sm:text-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-400"></span>
+          </span>
+          🎓 Penerimaan Murid Baru T.A. 2026/2027 — Jalur Indent / Daftar Lebih Awal
+        </div>
+
+        <h1 class="reveal reveal-delay-1 mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Amankan Kuota &amp;
+          <span class="relative whitespace-nowrap">
+            <span class="bg-gradient-to-r from-gold-400 via-amber-300 to-gold-400 bg-clip-text text-transparent">Jurusan Impianmu</span>
+          </span>
+          Lebih Awal di SMK Darut Taqwa!
+        </h1>
+
+        <p class="reveal reveal-delay-2 mt-6 max-w-2xl text-base leading-relaxed text-brand-100/90 sm:text-lg">
+          Sekolah Pusat Keunggulan Berbasis Pesantren dengan Fasilitas Kelas Industri dan Kerjasama Ratusan Mitra Kerja.
+        </p>
+
+        <!-- CTA -->
+        <div class="reveal reveal-delay-3 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="#kontak"
+             class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-gold-400 to-gold-500 px-7 py-4 text-base font-extrabold text-brand-950 shadow-xl shadow-amber-500/25 transition hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0">
+            📝 DAFTAR INDENT SEKARANG
+            <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://wa.me/6287711061755?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20pendaftaran%20SPMB%20Jalur%20Indent%20SMK%20Darut%20Taqwa." target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:border-brand-300/50 hover:bg-white/10">
+            💬 Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- Trust points -->
+        <div class="reveal reveal-delay-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-brand-200/90">
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg> SMK Pusat Keunggulan</span>
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg> Berbasis Pesantren</span>
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg> Lulusan Siap Kerja</span>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="reveal reveal-delay-2 lg:col-span-5">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-500/20 to-gold-400/20 blur-2xl"></div>
+
+          <div class="relative rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur-xl shadow-soft sm:p-8">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-bold uppercase tracking-wider text-brand-300">Kuota Jalur Indent</p>
+              <span class="rounded-full bg-red-500/20 px-3 py-1 text-[11px] font-bold text-red-300">TERBATAS</span>
+            </div>
+
+            <div class="mt-6 space-y-4">
+              <!-- Item -->
+              <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-brand-950/40 p-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-500/20 text-xl">🔒</span>
+                <div>
+                  <p class="text-sm font-bold text-white">Jaminan Kuota Jurusan</p>
+                  <p class="mt-0.5 text-xs leading-relaxed text-brand-200/80">Kepastian memilih jurusan favorit sebelum kuota reguler penuh.</p>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-brand-950/40 p-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gold-400/20 text-xl">🎁</span>
+                <div>
+                  <p class="text-sm font-bold text-white">Prioritas Program Beasiswa</p>
+                  <p class="mt-0.5 text-xs leading-relaxed text-brand-200/80">Peluang lebih besar meraih Beasiswa Prestasi Akademik &amp; Non-Akademik.</p>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-brand-950/40 p-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-500/20 text-xl">🆓</span>
+                <div>
+                  <p class="text-sm font-bold text-white">Gratis Urus Dokumen</p>
+                  <p class="mt-0.5 text-xs leading-relaxed text-brand-200/80">E-KTP, Surat Prakerja (AK1), &amp; Surat Izin Operasional (SIO).</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#kontak" class="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-extrabold text-brand-800 transition hover:bg-brand-50">
+              Ambil Kursi Sekarang →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="absolute bottom-0 left-0 right-0 leading-none">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="h-12 w-full sm:h-16"><path fill="#ffffff" d="M0,40 C240,90 480,0 720,24 C960,48 1200,90 1440,48 L1440,80 L0,80 Z"/></svg>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     2. WHY INDENT
+============================================================ -->
+<section id="keuntungan" class="relative bg-white py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">Keuntungan Daftar Lebih Awal</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+        Mengapa Harus Indent / Daftar Lebih Awal?
+      </h2>
+      <p class="reveal reveal-delay-2 mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Jangan sampai kehabisan kuota di jurusan pilihanmu! Jalur Indent memberikan keuntungan ekstra:
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-soft">
+        <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-2xl shadow-lg shadow-brand-500/25">🔒</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Jaminan Kuota Jurusan</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-slate-600">Kepastian memilih jurusan favorit sebelum kuota reguler penuh.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-soft">
+        <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-amber-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-500 text-2xl shadow-lg shadow-amber-400/25">🎁</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Prioritas Program Beasiswa</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-slate-600">Peluang lebih besar memperoleh Beasiswa Berprestasi Akademik &amp; Non-Akademik.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-soft">
+        <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-2xl shadow-lg shadow-brand-500/25">💼</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Administrasi Lebih Cepat</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-slate-600">Bebas repot saat masa penerimaan serentak dimulai.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-3 group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-soft">
+        <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-2xl shadow-lg shadow-brand-500/25">🆓</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Gratis Urus Dokumen</h3>
+          <ul class="mt-2.5 space-y-1.5 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500"></span> E-KTP &amp; Surat Prakerja (AK1)</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500"></span> Surat Izin Operasional (SIO)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. KEUNGGULAN SEKOLAH
+============================================================ -->
+<section id="keunggulan" class="relative overflow-hidden bg-brand-950 py-20 sm:py-28">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950"></div>
+  <div class="absolute inset-0 bg-grid opacity-40"></div>
+  <div class="pointer-events-none absolute top-1/3 -left-32 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-300">Why Choose Us</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Kenapa SMK Darut Taqwa Jadi Pilihan Terbaik?
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-2xl shadow-lg shadow-brand-500/20">🌟</span>
+        <h3 class="mt-6 text-lg font-extrabold text-white">SMK Pusat Keunggulan</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-brand-100/80">Terbukti sebagai SMKS Terbaik Se-Pasuruan.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal reveal-delay-1 group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-2xl shadow-lg shadow-brand-500/20">🕌</span>
+        <h3 class="mt-6 text-lg font-extrabold text-white">School Religious Culture</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-brand-100/80">Pembentukan karakter unggul berbasis pesantren.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal reveal-delay-2 group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-500 text-2xl shadow-lg shadow-amber-400/20">🏭</span>
+        <h3 class="mt-6 text-lg font-extrabold text-white">Kelas Industri &amp; Link and Match</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-brand-100/80">Kurikulum yang disesuaikan langsung dengan kebutuhan dunia kerja dan industri terkemuka.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-2xl shadow-lg shadow-brand-500/20">👨‍🏫</span>
+        <h3 class="mt-6 text-lg font-extrabold text-white">Tenaga Pendidik Profesional</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-brand-100/80">Dampingan dari pengajar berpengalaman dan praktisi industri.</p>
+      </div>
+
+      <!-- Card 5 (highlight) -->
+      <div class="reveal reveal-delay-1 group rounded-3xl border border-gold-400/30 bg-gradient-to-br from-gold-400/15 to-brand-500/10 p-7 backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-gold-400/60 md:col-span-2 lg:col-span-2">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
+          <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-500 text-2xl shadow-lg shadow-amber-400/20">💼</span>
+          <div>
+            <h3 class="text-lg font-extrabold text-white">Program BMW</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-brand-100/85">
+              Lulusan siap <span class="font-bold text-gold-400">Bekerja</span>, <span class="font-bold text-gold-400">Melanjutkan Kuliah</span>, atau <span class="font-bold text-gold-400">Wirausaha</span>!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. PILIHAN JURUSAN
+============================================================ -->
+<section id="jurusan" class="bg-slate-50 py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">Program Keahlian</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+        Pilihan Jurusan
+      </h2>
+      <p class="reveal reveal-delay-2 mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Pilih minat dan raih masa depan gemilang bersama program keahlian unggulan kami.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- DKV -->
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-fuchsia-500 to-purple-600"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-fuchsia-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-fuchsia-500 to-purple-600 text-2xl shadow-lg shadow-fuchsia-500/25">🎨</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Desain Komunikasi Visual</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-fuchsia-600">DKV</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Kembangkan kreativitas, fotografi, motion graphics, dan tren visual digital terkini.</p>
+        </div>
+      </div>
+
+      <!-- BD -->
+      <div class="reveal reveal-delay-1 group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-500 to-blue-600"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-sky-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-2xl shadow-lg shadow-sky-500/25">📈</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Bisnis Digital</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-sky-600">BD</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Kuasai pemasaran digital, AI marketing, e-commerce, dan analisis data untuk era modern.</p>
+        </div>
+      </div>
+
+      <!-- TKJ -->
+      <div class="reveal reveal-delay-2 group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-600"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-emerald-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-2xl shadow-lg shadow-emerald-500/25">🌐</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Teknik Komputer dan Jaringan</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-emerald-600">TKJ</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Jadilah ahli jaringan digital, infrastruktur IT, dan teknologi masa depan.</p>
+        </div>
+      </div>
+
+      <!-- DPIB -->
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-600"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-amber-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-2xl shadow-lg shadow-amber-500/25">📐</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Desain Pemodelan &amp; Informasi Bangunan</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-amber-600">DPIB / Arsitek</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Kuasai keterampilan drafter profesional dan perancangan bangunan inovatif.</p>
+        </div>
+      </div>
+
+      <!-- TSM -->
+      <div class="reveal reveal-delay-1 group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-red-500 to-rose-600"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-red-50 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-2xl shadow-lg shadow-red-500/25">🏍️</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Teknik Sepeda Motor</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-red-600">TSM</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Wujudkan impian menjadi teknisi andal hingga pebisnis otomotif roda dua.</p>
+        </div>
+      </div>
+
+      <!-- TKR -->
+      <div class="reveal reveal-delay-2 group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-soft">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-slate-600 to-slate-800"></div>
+        <div class="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-slate-100 transition-transform duration-500 group-hover:scale-150"></div>
+        <div class="relative">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-slate-600 to-slate-800 text-2xl shadow-lg shadow-slate-500/25">🚗</span>
+          <h3 class="mt-6 text-lg font-extrabold text-brand-950">Teknik Kendaraan Ringan</h3>
+          <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-600">TKR</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Pelajari teknologi otomotif roda empat terbaru dengan praktik langsung.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal mt-12 text-center">
+      <a href="#kontak" class="inline-flex items-center gap-2 rounded-2xl bg-brand-700 px-7 py-4 text-base font-extrabold text-white shadow-lg shadow-brand-700/25 transition hover:-translate-y-0.5 hover:bg-brand-800">
+        🔒 Kunci Jurusan Pilihanmu Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. MITRA INDUSTRI
+============================================================ -->
+<section id="mitra" class="bg-white py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">Link &amp; Match</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+        Dipercaya oleh Puluhan Mitra Industri Terkemuka
+      </h2>
+      <p class="reveal reveal-delay-2 mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Siswa kami dibekali keterampilan sesuai standar industri dan berkesempatan magang hingga bekerja di perusahaan mitra.
+      </p>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap reveal relative mt-14 overflow-hidden">
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-32"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-32"></div>
+
+    <div class="marquee-track gap-4">
+      <!-- Set 1 -->
+      <div class="flex gap-4">
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Astra Honda Motor</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Auto 2000</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Daihatsu</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Maspion Group</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Axioo</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Mikrotik</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Bank BCA</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Alfamidi</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Prestone</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">PT Arief Arsitek</span>
+      </div>
+      <!-- Set 2 (duplicate) -->
+      <div class="flex gap-4" aria-hidden="true">
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Astra Honda Motor</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Auto 2000</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Daihatsu</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Maspion Group</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Axioo</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Mikrotik</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Bank BCA</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Alfamidi</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">Prestone</span>
+        <span class="whitespace-nowrap rounded-2xl border border-slate-200 bg-slate-50 px-7 py-4 text-sm font-bold text-slate-700">PT Arief Arsitek</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <p class="reveal text-center text-sm font-medium text-slate-500">…dan banyak lagi perusahaan mitra industri lainnya.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     6. PRESTASI & EKSTRAKURIKULER
+============================================================ -->
+<section id="prestasi" class="bg-slate-50 py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">Bakat &amp; Minat</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+        Wadah Pengembangan Bakat &amp; Minat Siswa
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-2">
+
+      <!-- Prestasi -->
+      <div class="reveal rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
+        <div class="flex items-center gap-3">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-500 text-xl shadow-lg shadow-amber-400/25">🏆</span>
+          <h3 class="text-xl font-extrabold text-brand-950">Prestasi Terbaru</h3>
+        </div>
+
+        <ul class="mt-7 space-y-3.5">
+          <li class="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 transition hover:bg-brand-50">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold-400/25 text-[11px] font-extrabold text-amber-700">1</span>
+            <span class="text-sm font-semibold text-slate-700">Juara 1 Pagar Nusa Cabang 5</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 transition hover:bg-brand-50">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold-400/25 text-[11px] font-extrabold text-amber-700">1</span>
+            <span class="text-sm font-semibold text-slate-700">Juara 1 Menyanyi — Solo Vokal &amp; Al-Banjari</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 transition hover:bg-brand-50">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold-400/25 text-[11px] font-extrabold text-amber-700">1</span>
+            <span class="text-sm font-semibold text-slate-700">Juara 1 Pencak Silat Kelas Dewasa</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 transition hover:bg-brand-50">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-slate-300 text-[11px] font-extrabold text-slate-700">2</span>
+            <span class="text-sm font-semibold text-slate-700">Juara 2 Matematika UMM &amp; Juara 2 Paskibra LKBB JATIM</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 transition hover:bg-brand-50">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-500/20 text-[11px] font-extrabold text-brand-700">★</span>
+            <span class="text-sm font-semibold text-slate-700">Juara Essay Super Hero Lingkungan</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ekstrakurikuler -->
+      <div class="reveal reveal-delay-1 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
+        <div class="flex items-center gap-3">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-xl shadow-lg shadow-brand-500/25">🎨</span>
+          <h3 class="text-xl font-extrabold text-brand-950">Ekstrakurikuler</h3>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-2.5">
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Komunitas IT (ITEC)</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Teater Mata Angin</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Paskib Kobraska</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Pagar Nusa</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">PMR</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">PKS</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Albanjari Faafuaza Fauza</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Darut Taqwa Art Dance</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Paduan Suara &amp; Musik</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">Pramuka</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">OSIS</span>
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold text-brand-700">MPK</span>
+        </div>
+
+        <div class="mt-8 rounded-2xl bg-gradient-to-r from-brand-700 to-brand-900 p-6 text-white">
+          <p class="text-sm font-semibold text-brand-100">Punya bakat? Di sini tempatnya berkembang.</p>
+          <p class="mt-1 text-xs text-brand-200/80">Ikuti berbagai kompetisi dan kegiatan pengembangan diri bersama kami.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     7. SYARAT & TATA CARA INDENT
+============================================================ -->
+<section id="syarat" class="relative overflow-hidden bg-white py-20 sm:py-28">
+  <div class="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-brand-50 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">Alur Pendaftaran</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+        Syarat Pendaftaran &amp; Tata Cara Indent
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-5">
+
+      <!-- Syarat -->
+      <div class="reveal lg:col-span-3 rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9">
+        <h3 class="text-xl font-extrabold text-brand-950">Syarat Pendaftaran</h3>
+        <p class="mt-1.5 text-sm text-slate-500">Sederhana — masing-masing cukup <span class="font-bold text-brand-700">1 lembar</span>.</p>
+
+        <ul class="mt-7 space-y-4">
+          <li class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-100 text-lg">📄</span>
+            <span class="pt-1.5 text-sm font-semibold text-slate-700">Fotocopy Ijazah / Surat Keterangan Lulus SMP/MTs</span>
+          </li>
+          <li class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-100 text-lg">👨‍👩‍👧</span>
+            <span class="pt-1.5 text-sm font-semibold text-slate-700">Fotocopy Kartu Keluarga (KK)</span>
+          </li>
+          <li class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-100 text-lg">🪪</span>
+            <span class="pt-1.5 text-sm font-semibold text-slate-700">Fotocopy KTP Orang Tua (Ayah &amp; Ibu)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Jadwal + CTA -->
+      <div class="reveal reveal-delay-1 lg:col-span-2 flex flex-col gap-6">
+        <div class="rounded-3xl bg-gradient-to-br from-brand-800 to-brand-950 p-7 text-white shadow-soft sm:p-9">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-xl">📅</span>
+            <p class="text-sm font-bold uppercase tracking-widest text-brand-300">Jadwal Pendaftaran Utama</p>
+          </div>
+          <p class="mt-6 text-2xl font-extrabold leading-tight sm:text-3xl">02 Januari <span class="text-brand-400">s/d</span> 07 Juli</p>
+          <p class="mt-3 rounded-xl border border-gold-400/30 bg-gold-400/10 px-4 py-3 text-xs font-semibold leading-relaxed text-gold-400">
+            ⚡ Jalur Indent dibuka lebih awal sampai kuota terpenuhi.
+          </p>
+        </div>
+
+        <a href="#kontak" class="group flex flex-1 flex-col justify-center rounded-3xl border-2 border-dashed border-brand-300 bg-brand-50 p-7 text-center transition hover:border-brand-500 hover:bg-brand-100">
+          <p class="text-sm font-bold text-brand-800">Siap daftar sekarang?</p>
+          <p class="mt-1 text-xs text-brand-700/80">Amankan kuota jurusanmu sebelum penuh.</p>
+          <span class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-700 px-5 py-3 text-sm font-extrabold text-white transition group-hover:bg-brand-800">
+            📝 Daftar Indent
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     8. CONTACT & FOOTER
+============================================================ -->
+<section id="kontak" class="relative overflow-hidden bg-brand-950 py-20 sm:py-28">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950"></div>
+  <div class="absolute inset-0 bg-grid opacity-40"></div>
+  <div class="pointer-events-none absolute -bottom-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="reveal inline-block rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-300">Hubungi Kami</span>
+      <h2 class="reveal reveal-delay-1 mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Butuh Bantuan Pendaftaran?
+      </h2>
+      <p class="reveal reveal-delay-2 mt-4 text-base text-brand-100/85 sm:text-lg">
+        Hubungi tim kami — siap membantu kamu dari pendaftaran sampai daftar ulang.
+      </p>
+    </div>
+
+    <!-- Kontak cards -->
+    <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+
+      <a href="https://wa.me/6287711061755" target="_blank" rel="noopener" class="reveal group rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition hover:-translate-y-1.5 hover:border-brand-400/50 hover:bg-white/10">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-xl shadow-lg shadow-brand-500/20">📱</span>
+        <p class="mt-4 text-sm font-extrabold text-white">Musliq</p>
+        <p class="mt-1 text-xs font-semibold text-brand-300 transition group-hover:text-brand-200">0877 1106 1755</p>
+      </a>
+
+      <a href="https://wa.me/6285855306763" target="_blank" rel="noopener" class="reveal reveal-delay-1 group rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition hover:-translate-y-1.5 hover:border-brand-400/50 hover:bg-white/10">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-xl shadow-lg shadow-brand-500/20">📱</span>
+        <p class="mt-4 text-sm font-extrabold text-white">Nasikin</p>
+        <p class="mt-1 text-xs font-semibold text-brand-300 transition group-hover:text-brand-200">0858 5530 6763</p>
+      </a>
+
+      <a href="https://wa.me/6282175806065" target="_blank" rel="noopener" class="reveal reveal-delay-2 group rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition hover:-translate-y-1.5 hover:border-brand-400/50 hover:bg-white/10">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-xl shadow-lg shadow-brand-500/20">📱</span>
+        <p class="mt-4 text-sm font-extrabold text-white">Luqman</p>
+        <p class="mt-1 text-xs font-semibold text-brand-300 transition group-hover:text-brand-200">0821 7580 6065</p>
+      </a>
+
+      <a href="https://wa.me/6287775571386" target="_blank" rel="noopener" class="reveal reveal-delay-3 group rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition hover:-translate-y-1.5 hover:border-brand-400/50 hover:bg-white/10">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-xl shadow-lg shadow-brand-500/20">📱</span>
+        <p class="mt-4 text-sm font-extrabold text-white">Zidan</p>
+        <p class="mt-1 text-xs font-semibold text-brand-300 transition group-hover:text-brand-200">0877 7557 1386</p>
+      </a>
+
+      <a href="https://wa.me/6285649975325" target="_blank" rel="noopener" class="reveal reveal-delay-4 group rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition hover:-translate-y-1.5 hover:border-brand-400/50 hover:bg-white/10">
+        <span class="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 text-xl shadow-lg shadow-brand-500/20">📱</span>
+        <p class="mt-4 text-sm font-extrabold text-white">Ridwan</p>
+        <p class="mt-1 text-xs font-semibold text-brand-300 transition group-hover:text-brand-200">0856 4997 5325</p>
+      </a>
+
+    </div>
+
+    <!-- Big CTA -->
+    <div class="reveal mt-12 overflow-hidden rounded-3xl border border-gold-400/25 bg-gradient-to-r from-gold-400/15 via-brand-500/10 to-transparent p-8 text-center sm:p-12">
+      <h3 class="text-2xl font-extrabold text-white sm:text-3xl">Kuota Jalur Indent Terbatas!</h3>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-brand-100/85 sm:text-base">
+        Amankan kursi &amp; jurusan impianmu sekarang sebelum kuota reguler penuh. Gratis pengurusan dokumen!
+      </p>
+      <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+        <a href="https://wa.me/6287711061755?text=Assalamualaikum%2C%20saya%20ingin%20mendaftar%20Jalur%20Indent%20SMK%20Darut%20Taqwa." target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-gold-400 to-gold-500 px-7 py-4 text-base font-extrabold text-brand-950 shadow-xl shadow-amber-500/25 transition hover:-translate-y-0.5 hover:brightness-110">
+          📝 DAFTAR INDENT SEKARANG
+        </a>
+        <a href="https://wa.me/6287711061755?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20SPMB%20SMK%20Darut%20Taqwa." target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-white/10">
+          💬 Konsultasi via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Sosial & Website -->
+    <div class="reveal mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="https://www.smkdata.sch.id" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur transition hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-500/20 text-lg">🌐</span>
+        <span class="min-w-0">
+          <span class="block text-[11px] font-bold uppercase tracking-wider text-brand-400">Website</span>
+          <span class="block truncate text-sm font-semibold text-white">www.smkdata.sch.id</span>
+        </span>
+      </a>
+      <a href="https://instagram.com/smkdata.sch.id" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur transition hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pink-500/20 text-lg">📸</span>
+        <span class="min-w-0">
+          <span class="block text-[11px] font-bold uppercase tracking-wider text-brand-400">Instagram</span>
+          <span class="block truncate text-sm font-semibold text-white">@smkdata.sch.id</span>
+        </span>
+      </a>
+      <a href="https://facebook.com/smkdata.sch.id" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur transition hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-500/20 text-lg">📘</span>
+        <span class="min-w-0">
+          <span class="block text-[11px] font-bold uppercase tracking-wider text-brand-400">Facebook</span>
+          <span class="block truncate text-sm font-semibold text-white">smkdata.sch.id</span>
+        </span>
+      </a>
+      <a href="https://youtube.com/@smkdaruttaqwapurwosari" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur transition hover:border-brand-400/40 hover:bg-white/10">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-red-500/20 text-lg">🔴</span>
+        <span class="min-w-0">
+          <span class="block text-[11px] font-bold uppercase tracking-wider text-brand-400">YouTube</span>
+          <span class="block truncate text-sm font-semibold text-white">@smkdaruttaqwapurwosari</span>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER BAR -->
+<footer class="border-t border-white/10 bg-brand-950 py-8">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 text-sm font-extrabold text-white">DT</span>
+      <p class="text-xs font-semibold text-brand-200/80">© <span id="year"></span> SMK Darut Taqwa Purwosari. All rights reserved.</p>
+    </div>
+    <p class="text-xs text-brand-300/70">SPMB T.A. 2026/2027 · Jalur Indent / Daftar Lebih Awal</p>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     FLOATING WHATSAPP BUTTON
+============================================================ -->
+<a href="https://wa.me/6287711061755?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20SPMB%20Jalur%20Indent%20SMK%20Darut%20Taqwa."
+   target="_blank" rel="noopener" aria-label="Chat WhatsApp"
+   class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-5 py-4 font-bold text-white shadow-2xl shadow-emerald-600/40 transition hover:-translate-y-1 hover:brightness-110">
+  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.116-.198.058-.371-.058-.52-.116-.148-.643-1.55-.88-2.124-.232-.556-.468-.48-.643-.489l-.545-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="hidden text-sm sm:inline">Chat Kami</span>
+</a>
+
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+  // Tahun otomatis
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Navbar scroll state ----
+  const navbarInner = document.getElementById('navbarInner');
+  const onScroll = () => {
+    if (window.scrollY > 40) {
+      navbarInner.classList.add('bg-brand-950/95', 'shadow-2xl', 'shadow-brand-950/40');
+      navbarInner.classList.remove('bg-brand-950/70');
+    } else {
+      navbarInner.classList.remove('bg-brand-950/95', 'shadow-2xl', 'shadow-brand-950/40');
+      navbarInner.classList.add('bg-brand-950/70');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---- Mobile menu ----
+  const menuBtn   = document.getElementById('menuBtn');
+  const mobileMenu= document.getElementById('mobileMenu');
+  const iconOpen  = document.getElementById('iconOpen');
+  const iconClose = document.getElementById('iconClose');
+
+  const toggleMenu = (force) => {
+    const willOpen = force !== undefined ? force : mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', !willOpen);
+    iconOpen.classList.toggle('hidden', willOpen);
+    iconClose.classList.toggle('hidden', !willOpen);
+  };
+
+  menuBtn.addEventListener('click', () => toggleMenu());
+  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+  // ---- Reveal on scroll ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---- Smooth scroll (offset untuk navbar) ----
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const id = this.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const y = target.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
